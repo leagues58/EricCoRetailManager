@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERMDataManager", "ERMDataMa
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ERMDatabase", "ERMDatabase\ERMDatabase.sqlproj", "{6EA5791A-4503-45C6-AE52-6A482015ADEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERMDesktopUI", "ERMDesktopUI\ERMDesktopUI.csproj", "{BC844949-9A05-4850-B069-63A43E0FB30D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{6EA5791A-4503-45C6-AE52-6A482015ADEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EA5791A-4503-45C6-AE52-6A482015ADEF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6EA5791A-4503-45C6-AE52-6A482015ADEF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BC844949-9A05-4850-B069-63A43E0FB30D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC844949-9A05-4850-B069-63A43E0FB30D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC844949-9A05-4850-B069-63A43E0FB30D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC844949-9A05-4850-B069-63A43E0FB30D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
