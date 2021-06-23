@@ -1,8 +1,7 @@
 ﻿using Caliburn.Micro;
+using ERMDesktopUI.Helpers;
+using ERMDesktopUI.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ERMDesktopUI.ViewModels
@@ -11,6 +10,12 @@ namespace ERMDesktopUI.ViewModels
     {
         private string _userName;
         private string _password;
+        private IAPIHelper _apiHelper;
+
+        public LoginViewModel(IAPIHelper apiHelper)
+        {
+            _apiHelper = apiHelper;
+        }
 
         public string UserName
         {
@@ -48,9 +53,16 @@ namespace ERMDesktopUI.ViewModels
             }
         }
 
-        public void LogIn()
+        public async Task LogIn()
         {
-            Console.WriteLine();
+            try
+            {
+                AuthenticatedUser result = await _apiHelper.Authenticate(UserName, Password); 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
