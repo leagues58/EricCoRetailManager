@@ -9,6 +9,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ERMDatabase", "ERMDatabase\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERMDesktopUI", "ERMDesktopUI\ERMDesktopUI.csproj", "{BC844949-9A05-4850-B069-63A43E0FB30D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERMDataManager.Library", "ERMDataManager.Library\ERMDataManager.Library.csproj", "{D03C124E-3DBE-418D-A12B-E66186DB4809}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{BC844949-9A05-4850-B069-63A43E0FB30D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC844949-9A05-4850-B069-63A43E0FB30D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC844949-9A05-4850-B069-63A43E0FB30D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D03C124E-3DBE-418D-A12B-E66186DB4809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D03C124E-3DBE-418D-A12B-E66186DB4809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D03C124E-3DBE-418D-A12B-E66186DB4809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D03C124E-3DBE-418D-A12B-E66186DB4809}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
