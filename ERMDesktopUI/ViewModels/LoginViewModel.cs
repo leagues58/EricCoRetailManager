@@ -82,6 +82,7 @@ namespace ERMDesktopUI.ViewModels
                 AuthenticatedUser result = await _apiHelper.Authenticate(UserName, Password);
 
                 // capture info about the user
+                await _apiHelper.GetLoggedInUserByInfo(result.Access_Token);
             }
             catch (Exception ex)
             {

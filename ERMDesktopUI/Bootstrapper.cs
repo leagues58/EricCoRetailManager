@@ -1,6 +1,7 @@
 ﻿using Caliburn.Micro;
 using ERMDesktopUI.Helpers;
 using ERMDesktopUI.Library.API;
+using ERMDesktopUI.Library.Models;
 using ERMDesktopUI.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,8 @@ namespace ERMDesktopUI
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
-                .Singleton<IAPIHelper, APIHelper>();
+                .Singleton<IAPIHelper, APIHelper>()
+                .Singleton<ILoggedInUserModel, LoggedInUserModel>();
                 
 
             ConventionManager.AddElementConvention<PasswordBox>(
