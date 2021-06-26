@@ -1,7 +1,7 @@
-﻿using ERMDesktopUI.Models;
+﻿using ERMDesktopUI.Library.Models;
 using System.Threading.Tasks;
 
-namespace ERMDesktopUI.Helpers
+namespace ERMDesktopUI.Library.API
 {
     public interface IAPIHelper
     {

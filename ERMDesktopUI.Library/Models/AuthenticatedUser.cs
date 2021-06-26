@@ -1,4 +1,4 @@
-﻿namespace ERMDesktopUI.Models
+﻿namespace ERMDesktopUI.Library.Models
 {
     public class AuthenticatedUser
     {

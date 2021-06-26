@@ -322,9 +322,9 @@
     <Content Include="Scripts\jquery-3.6.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ERMDataManager.Library\ERMDataManager.Library.csproj">
+    <ProjectReference Include="..\ERMDataManager.Library\API.Library.csproj">
       <Project>{d03c124e-3dbe-418d-a12b-e66186db4809}</Project>
-      <Name>ERMDataManager.Library</Name>
+      <Name>API.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,6 +1,6 @@
 ﻿using Caliburn.Micro;
-using ERMDesktopUI.Helpers;
-using ERMDesktopUI.Models;
+using ERMDesktopUI.Library.API;
+using ERMDesktopUI.Library.Models;
 using System;
 using System.Threading.Tasks;
 
@@ -79,7 +79,9 @@ namespace ERMDesktopUI.ViewModels
             try
             {
                 ErrorMessage = "";
-                AuthenticatedUser result = await _apiHelper.Authenticate(UserName, Password); 
+                AuthenticatedUser result = await _apiHelper.Authenticate(UserName, Password);
+
+                // capture info about the user
             }
             catch (Exception ex)
             {
