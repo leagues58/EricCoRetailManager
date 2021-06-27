@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using ERMDesktopUI.EventModels;
 using ERMDesktopUI.Library.API;
 using ERMDesktopUI.Library.Models;
 using System;
@@ -11,11 +12,13 @@ namespace ERMDesktopUI.ViewModels
         private string _userName;
         private string _password;
         private IAPIHelper _apiHelper;
+        private IEventAggregator _events;
         private string _errorMessage;
 
-        public LoginViewModel(IAPIHelper apiHelper)
+        public LoginViewModel(IAPIHelper apiHelper, IEventAggregator events)
         {
             _apiHelper = apiHelper;
+            _events = events;
         }
 
         public string UserName
@@ -83,6 +86,8 @@ namespace ERMDesktopUI.ViewModels
 
                 // capture info about the user
                 await _apiHelper.GetLoggedInUserByInfo(result.Access_Token);
+
+                _events.PublishOnUIThread(new LogOnEvent());
             }
             catch (Exception ex)
             {

@@ -1,20 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Caliburn.Micro;
+﻿using Caliburn.Micro;
+using ERMDesktopUI.EventModels;
 
 namespace ERMDesktopUI.ViewModels
 {
-    public class ShellViewModel : Conductor<object>
+    public class ShellViewModel : Conductor<object>, IHandle<LogOnEvent>
     {
-        private LoginViewModel _loginViewModel;
+        private SalesViewModel _salesViewModel;
+        private SimpleContainer _container;
+        private IEventAggregator _events;
 
-        public ShellViewModel(LoginViewModel loginVM)
+        public ShellViewModel(SalesViewModel salesVM, IEventAggregator events, SimpleContainer container)
         {
-            _loginViewModel = loginVM;
-            ActivateItem(_loginViewModel);
+            _events = events;
+            _salesViewModel = salesVM;
+            _container = container;
+
+            _events.Subscribe(this);
+            ActivateItem(_container.GetInstance<LoginViewModel>());
+        }
+
+        public void Handle(LogOnEvent message)
+        {
+            ActivateItem(_salesViewModel);
         }
     }
 }

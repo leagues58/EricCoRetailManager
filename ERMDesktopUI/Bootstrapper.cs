@@ -1,4 +1,4 @@
-﻿using Caliburn.Micro;
+﻿ using Caliburn.Micro;
 using ERMDesktopUI.Helpers;
 using ERMDesktopUI.Library.API;
 using ERMDesktopUI.Library.Models;
