@@ -36,7 +36,8 @@
         <TextBlock Text="Items" Grid.Row="1" Grid.Column="0" />
         <ListBox x:Name="Products"
                  Grid.Row="2" Grid.Column="0"
-                 MinHeight="200" MinWidth="150">
+                 MinHeight="200" MinWidth="150"
+                 SelectedItem="{Binding SelectedProduct}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}"/>
@@ -60,7 +61,13 @@
                  Grid.Row="2"
                  Grid.Column="2"
                  MinHeight="200"
-                 MinWidth="150" />
+                 MinWidth="150" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Product_Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <DockPanel Grid.Row="3" Grid.Column="2">
             <TextBlock Text="SubTotal: " TextAlignment="Right" Margin="0 0 15 0"/>
             <TextBlock x:Name="SubTotal" Text="$0.00" TextAlignment="Right"/>

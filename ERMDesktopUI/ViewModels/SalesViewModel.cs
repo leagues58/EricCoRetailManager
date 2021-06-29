@@ -39,9 +39,9 @@ namespace ERMDesktopUI.ViewModels
             }
         }
 
-        private BindingList<ProductModel> _cart;
+        private BindingList<CartItemModel> _cart;
 
-        public BindingList<ProductModel> Cart
+        public BindingList<CartItemModel> Cart
         {
             get { return _cart; }
             set
@@ -60,6 +60,20 @@ namespace ERMDesktopUI.ViewModels
             {
                 _itemQuantity = value;
                 NotifyOfPropertyChange(() => ItemQuantity);
+                NotifyOfPropertyChange(() => CanAddToCart);
+            }
+        }
+
+        private ProductModel _selectedProduct;
+
+        public ProductModel SelectedProduct
+        {
+            get { return _selectedProduct; }
+            set
+            {
+                _selectedProduct = value;
+                NotifyOfPropertyChange(() => SelectedProduct);
+                NotifyOfPropertyChange(() => CanAddToCart);
             }
         }
 
@@ -97,14 +111,24 @@ namespace ERMDesktopUI.ViewModels
                 bool output = false;
                 // make sure something is selected
                 // make sure there is an item quantity
+                if (ItemQuantity > 0 && SelectedProduct?.QuantityInStock >= ItemQuantity)
+                {
+                    output = true;
+                }
 
-                return output;
+                return false;
             }
         }
 
         public void AddToCard()
         {
+            CartItemModel item = new CartItemModel()
+            {
+                Product = SelectedProduct,
+                QuantityInCart = ItemQuantity
+            };
 
+            Cart.Add(item);
         }
 
         public bool CanRemoveFromCart
